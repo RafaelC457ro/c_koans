@@ -46,7 +46,7 @@ Test(about_basics, variables)
         If you've had some experience with Java then C won't seem too foreign in
         terms of syntax
     */
-    char c = 0x02;
+    char c = 0x43;
     cr_assert_eq(c, 'C',
         "All characters in C are interpreted from the ASCII "
         "table, go to your terminal and enter 'man ascii' to "
@@ -58,11 +58,11 @@ Test(about_basics, variables)
     int i = 195935983;
     cr_assert_eq(i, 0xBADBEEF, "A int is 4 bytes");
 
-    long l = TODO;
+    long l = 59788208926;
     cr_assert_eq(l, 0xDEBA7AB1E,
         "A long is a larger integer type than int (supports unsigned).");
 
-    unsigned int ui = 3735928559;
+    unsigned int ui = 4294967295;
     /*
         This unsigned int should exceed the maximum capacity of an INT (hint
         INT_MAX is declared in limits.h)
@@ -78,14 +78,14 @@ Test(about_basics, variables)
         "A number literal starting with 0x will be interpreted as hexadecimal");
     cr_expect_eq(ll, 0b11111111,
         "A number literal starting with 0b will be interpreted as binary");
-    cr_assert_eq(ll, 0777,
+    cr_assert_eq(ll, 0377,
         "A number literal starting with 0 will be interpreted as octal");
 
-    double d = 3.50;
+    double d = 3.0;
     cr_assert_float_eq(d, (7 / 2), 0.000001,
         "Just like Java, C does integer division for 7/2");
 
-    double d2 = 350e-2;
+    double d2 = 3.0;
     cr_assert_float_eq(d2, 3 + (1 / 2), 0.000001,
         "Addition also effects whether a number literal is "
         "interpreted as IEEE or 2's Comp");

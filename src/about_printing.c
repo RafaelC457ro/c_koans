@@ -22,7 +22,7 @@ Test(about_printing, basic_printing)
     */
 
     // For this koan, output 'A'
-    putchar(TODO);
+    putchar('A');
 
     cr_assert_file_contents_eq_str(stdout, "A");
 
@@ -33,7 +33,7 @@ Test(about_printing, basic_printing)
 
     // For this koan, output "Foo" and two newline characters.
     // Remember that puts will output a newline character, too!
-    puts(TODO_S);
+    puts("Foo\n\n");
 
     cr_assert_file_contents_eq_str(stdout, "Foo\n\n");
 }
@@ -52,7 +52,7 @@ Test(about_io, printf)
     */
 
     // For this koan, output "Hello World" and a newline.
-    char *string = TODO_S;
+    char *string = "World";
     printf("Hello %s\n", string);
 
     cr_assert_file_contents_eq_str(stdout, "Hello World\n");
@@ -69,20 +69,20 @@ Test(about_io, printf)
         74 to a nonzero value. This is to avoid compilation errors.
     */
 
-#if 0
+#if 1
     char c = 'J';
     int i = -1;
     double d = 3.14;
     long l = 0xDEADBEEF;
     void* p = (void*)0x400;
 
-    printf("char: TODO\n", c);
-    printf("int: TODO\n", i);
-    printf("unsinged int: TODO\n", i);
-    printf("hexadecimal unsigned int: TODO\n", i);
-    printf("float: TODO\n", d);
-    printf("long: TODO\n", l);
-    printf("pointer: TODO\n", p);
+    printf("char: %c\n", c);
+    printf("int: %u\n", i);
+    printf("unsinged int: %i\n", i);
+    printf("hexadecimal unsigned int: %X\n", i);
+    printf("float: %f4.6\n", d);
+    printf("long: %li\n", l);
+    printf("pointer: %p\n", p);
 #endif
     cr_assert_file_contents_eq_str(stdout,
         "char: J\nint: -1\nunsigned int: 4294967295\nhexadecimal unsigned int: "
